@@ -93,6 +93,10 @@
 	--marketplace-card-border: rgba(255, 255, 255, 0.1);
 	--marketplace-label-muted: rgba(255, 255, 255, 0.6);
 	--marketplace-label-strong: rgba(255, 255, 255, 0.85);
+	--creator-hero-fallback: linear-gradient(135deg,
+			oklch(0.18 0.04 264) 0%,
+			oklch(0.22 0.06 285) 50%,
+			oklch(0.28 0.08 30) 100%);
 }
 
 .dark {
@@ -135,6 +139,7 @@
 }
 
 @media (prefers-contrast: more) {
+
 	:root,
 	.dark {
 		--marketplace-card-bg: rgba(4, 12, 24, 0.88);
@@ -142,6 +147,10 @@
 		--marketplace-card-border: rgba(255, 255, 255, 0.4);
 		--marketplace-label-muted: rgba(255, 255, 255, 0.88);
 		--marketplace-label-strong: rgba(255, 255, 255, 0.97);
+		--creator-hero-fallback: linear-gradient(135deg,
+				oklch(0.14 0.04 264) 0%,
+				oklch(0.18 0.06 285) 50%,
+				oklch(0.22 0.08 30) 100%);
 	}
 }
 
@@ -149,6 +158,7 @@
 	* {
 		@apply border-border outline-ring/50;
 	}
+
 	body {
 		@apply bg-background text-foreground;
 	}
@@ -199,12 +209,10 @@
 	.skeleton-shimmer {
 		position: relative;
 		overflow: hidden;
-		background-image: linear-gradient(
-			110deg,
-			rgba(255, 255, 255, 0.07) 30%,
-			rgba(255, 255, 255, 0.2) 45%,
-			rgba(255, 255, 255, 0.07) 60%
-		);
+		background-image: linear-gradient(110deg,
+				rgba(255, 255, 255, 0.07) 30%,
+				rgba(255, 255, 255, 0.2) 45%,
+				rgba(255, 255, 255, 0.07) 60%);
 		background-size: 220% 100%;
 		animation: skeleton-shimmer 1.6s linear infinite;
 	}
@@ -229,11 +237,9 @@
 	@media (prefers-reduced-motion: reduce) {
 		.skeleton-shimmer {
 			animation: none;
-			background-image: linear-gradient(
-				180deg,
-				rgba(255, 255, 255, 0.16),
-				rgba(255, 255, 255, 0.08)
-			);
+			background-image: linear-gradient(180deg,
+					rgba(255, 255, 255, 0.16),
+					rgba(255, 255, 255, 0.08));
 		}
 	}
 }
@@ -242,6 +248,7 @@
 	0% {
 		background-position: 100% 0;
 	}
+
 	100% {
 		background-position: -100% 0;
 	}
